@@ -8,7 +8,7 @@ const Hero = () => {
             <div className='text-center space-y-4'>
                 <h1 className='font-thin text-7xl text-gray-900'>Browse, Search, View, Buy</h1>
                 <p className='text-gray-500'>
-                    Best place to browse, search, view details and purchase of top flagship phones
+                    Best place to browse, search, view details and purchase of top flagship phones <br />
                     of the current time - FlagshipFaceOff
                 </p>
                 <form className='flex flex-col md:flex-row justify-center item-center mb-4 md:p-24'>
