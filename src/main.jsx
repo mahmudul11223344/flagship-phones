@@ -5,12 +5,15 @@ import {
   RouterProvider
 } from "react-router";
 import router from './Routs/Routs';
+import CartProvider from './Providers/CardProvider';
 
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </StrictMode>,
 )

@@ -6,20 +6,21 @@ import { useLoaderData } from 'react-router';
 const Home = () => {
 
     const data = useLoaderData();
-    const [phones, sePhones] = useState(data)
-    const handleSearch = (e , text) => {
+    const [phones, setPhones] = useState(data)
+    const handleSearch = (e, text) => {
         e.preventDefault()
-        const searchedPhones = data.filter(phone => 
-       phone.name.toLowerCase().split(' ').includes(text.toLowerCase()) || 
-       phone.brand.toLowerCase().split(' ').includes(text.toLowerCase())
-    )
-    sePhones(searchedPhones);
+        if (text === '') return setPhones(data)
+        const searchedPhones = data.filter(phone =>
+            phone.name.toLowerCase().split(' ').includes(text.toLowerCase()) ||
+            phone.brand.toLowerCase().split(' ').includes(text.toLowerCase())
+        )
+        setPhones(searchedPhones);
     }
 
     return (
         <div>
-            <Hero handleSearch={handleSearch}/>
-            <PhonesContainer phones = {phones}/>
+            <Hero handleSearch={handleSearch} />
+            <PhonesContainer phones={phones} />
         </div>
     );
 };
